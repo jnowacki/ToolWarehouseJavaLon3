@@ -8,6 +8,8 @@ public class ToolDaoImpl implements ToolDao {
 
     private static ToolDaoImpl instance;
 
+    private static List<Tool> tools;
+
     public static ToolDaoImpl getInstance(){
         if (instance == null) {
             instance = new ToolDaoImpl();
@@ -21,6 +23,6 @@ public class ToolDaoImpl implements ToolDao {
 
     @Override
     public List<Tool> getAll() {
-        return null;
+        return tools;
     }
 }
