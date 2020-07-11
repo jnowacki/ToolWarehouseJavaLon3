@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ToolService {
     List<Tool> getAll();
+    void setAvailability(Long id, boolean isAvailable);
 }
