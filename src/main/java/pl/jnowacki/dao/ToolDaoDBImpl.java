@@ -23,7 +23,10 @@ public class ToolDaoDBImpl implements ToolDao {
         return instance;
     }
 
-//    1. skopiować treść data.sql i wykonać w workbenchu
+    private ToolDaoDBImpl() {
+    }
+
+    //    1. skopiować treść data.sql i wykonać w workbenchu
 //    2. skopiować klasę DbConnection i podmienić w niej swoje dane (nazwa, hasło, nazwa DB)
 //    3. Dodać nową implementację ToolDao - skopoiować zawartosc z githuba
 //    4. w servisie podmienić ToolDaoImpl na nową implementację
