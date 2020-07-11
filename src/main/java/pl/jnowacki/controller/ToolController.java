@@ -21,4 +21,14 @@ public class ToolController extends HttpServlet {
 
         getServletContext().getRequestDispatcher("/toolsJsp.jsp").forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
+        Long id = Long.parseLong(req.getParameter("id"));
+        boolean isAvailable = Boolean.parseBoolean(req.getParameter("isAvailable"));
+
+//        1. zmienić dostępność w mocku (lista w dao)
+//        2. wyświetlić znów tabelę
+    }
 }
