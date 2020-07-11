@@ -5,12 +5,35 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 
+<style>
+    table, td, th{
+        border: solid 1px black;
+    }
+</style>
+
 <head>
     <title>Tools</title>
 </head>
 <body>
 
-${requestScope.tools}
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Type</th>
+        <th>Available</th>
+    </tr>
+
+    <c:forEach items="${requestScope.tools}" var="tool" varStatus="status">
+        <tr>
+            <td>${tool.id}</td>
+            <td>${tool.name}</td>
+            <td>${tool.type}</td>
+            <td>${tool.available}</td>
+        </tr>
+    </c:forEach>
+
+</table>
 
 </body>
 </html>
