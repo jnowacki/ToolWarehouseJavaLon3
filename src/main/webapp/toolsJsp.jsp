@@ -10,7 +10,7 @@
 </head>
 <body>
 
-
+${requestScope.tools}
 
 </body>
 </html>

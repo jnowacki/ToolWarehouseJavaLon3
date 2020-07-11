@@ -1,10 +1,14 @@
 package pl.jnowacki.service;
 
+import pl.jnowacki.dao.ToolDao;
+import pl.jnowacki.dao.ToolDaoImpl;
 import pl.jnowacki.model.Tool;
 
 import java.util.List;
 
 public class ToolServiceImpl implements ToolService {
+
+    private ToolDao toolDao = ToolDaoImpl.getInstance();
 
     private static ToolServiceImpl instance;
 
@@ -21,6 +25,6 @@ public class ToolServiceImpl implements ToolService {
 
     @Override
     public List<Tool> getAll() {
-        return null;
+        return toolDao.getAll();
     }
 }
