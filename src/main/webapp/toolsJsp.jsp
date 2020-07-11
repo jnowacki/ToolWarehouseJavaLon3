@@ -26,7 +26,6 @@
     }
 
     .container {
-
         height: 50px;
         width: 100px;
 
@@ -65,6 +64,8 @@
             <td class="${tool.available ? "available" : "unavailable"}">
                 <div class="container">
                     <form method="post">
+                        <input type="hidden" value="${tool.id}" name="id">
+                        <input type="hidden" value="${!tool.available}" name="isAvailable">
                         <input type="submit" value="${tool.available ? "Take" : "Return"}">
                     </form>
                 </div>
