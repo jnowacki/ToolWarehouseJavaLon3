@@ -30,6 +30,8 @@ public class ToolController extends HttpServlet {
 
         toolService.setAvailability(id, isAvailable);
 
+
+
 //        1. zmienić dostępność w mocku (lista w dao)
 //        2. wyświetlić znów tabelę
     }

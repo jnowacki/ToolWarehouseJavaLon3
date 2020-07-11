@@ -36,6 +36,9 @@ public class ToolDaoImpl implements ToolDao {
 
     @Override
     public void setAvailability(Long id, boolean isAvailable) {
-
+        tools.stream()
+                .filter(tool -> tool.getId().equals(id))
+                .findAny()
+                .ifPresent(tool -> tool.setAvailable(isAvailable));
     }
 }
