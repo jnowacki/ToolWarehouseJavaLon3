@@ -23,6 +23,13 @@ public class ToolDaoDBImpl implements ToolDao {
         return instance;
     }
 
+//    1. skopiować treść data.sql i wykonać w workbenchu
+//    2. skopiować klasę DbConnection i podmienić w niej swoje dane (nazwa, hasło, nazwa DB)
+//    3. Dodać nową implementację ToolDao - skopoiować zawartosc z githuba
+//    4. w servisie podmienić ToolDaoImpl na nową implementację
+//    5. w pom nowa zależność
+//    * dodać połączenie w intellij
+
     @Override
     public List<Tool> getAll() {
         List<Tool> tools = new ArrayList<>();
@@ -53,6 +60,18 @@ public class ToolDaoDBImpl implements ToolDao {
 
     @Override
     public void setAvailability(Long id, boolean isAvailable) {
+        String selectSQL = "UPDATE tools SET available = ? WHERE id = ?";
 
+        try (Connection dbConnection = DbConnection.getDBConnection();
+             PreparedStatement preparedStatement = dbConnection.prepareStatement(selectSQL)) {
+
+            preparedStatement.setBoolean(1, isAvailable);
+            preparedStatement.setLong(2, id);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }
