@@ -33,4 +33,9 @@ public class ToolDaoImpl implements ToolDao {
     public List<Tool> getAll() {
         return tools;
     }
+
+    @Override
+    public void setAvailability(Long id, boolean isAvailable) {
+
+    }
 }
