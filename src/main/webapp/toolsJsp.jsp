@@ -29,7 +29,11 @@
             <td>${tool.id}</td>
             <td>${tool.name}</td>
             <td>${tool.type}</td>
-            <td>${tool.available}</td>
+            <td>
+                <form method="post">
+                    <input type="submit" value="Toggle">
+                </form>
+            </td>
         </tr>
     </c:forEach>
 
