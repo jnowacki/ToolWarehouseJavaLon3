@@ -6,8 +6,35 @@
 <html>
 
 <style>
+
+    table {
+        border-collapse: collapse;
+    }
+
     table, td, th{
         border: solid 1px black;
+    }
+
+    form {
+        margin: 0;
+    }
+
+    .container {
+
+        height: 50px;
+        width: 100px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .available {
+        background-color: green;
+    }
+
+    .unavailable {
+        background-color: red;
     }
 </style>
 
@@ -29,10 +56,12 @@
             <td>${tool.id}</td>
             <td>${tool.name}</td>
             <td>${tool.type}</td>
-            <td>
-                <form method="post">
-                    <input type="submit" value="Toggle">
-                </form>
+            <td class="${tool.available ? "available" : "unavailable"}">
+                <div class="container">
+                    <form method="post">
+                        <input type="submit" value="Toggle">
+                    </form>
+                </div>
             </td>
         </tr>
     </c:forEach>
