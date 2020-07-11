@@ -17,6 +17,12 @@
 
     form {
         margin: 0;
+
+    }
+
+    input[type="submit"] {
+        width: 70px;
+        height: 30px;
     }
 
     .container {
@@ -59,7 +65,7 @@
             <td class="${tool.available ? "available" : "unavailable"}">
                 <div class="container">
                     <form method="post">
-                        <input type="submit" value="Toggle">
+                        <input type="submit" value="${tool.available ? "Take" : "Return"}">
                     </form>
                 </div>
             </td>
