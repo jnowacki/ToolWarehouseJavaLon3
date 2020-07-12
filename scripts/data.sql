@@ -24,5 +24,5 @@ CREATE TABLE `users`
 );
 
 insert into `users` (`login`, `password`)
-values ('user1', 'user1'),
-       ('user2', 'user2');
+values ('user1', '$2a$12$fOKsMr93FPQhDnTEyZcXj.CHsssUDHZtCNy1e1RUsdEV/GTbzAc5W'),
+       ('user2', '$2a$12$PBNTmg0JxqZw.6rwyttkXOumi1XME0EuU2hsGutnzcC./cMfObjSO');

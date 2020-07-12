@@ -4,49 +4,20 @@
 <%--JSTL jest włączony--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
-
-<style>
-
-    table {
-        border-collapse: collapse;
-    }
-
-    table, td, th{
-        border: solid 1px black;
-    }
-
-    form {
-        margin: 0;
-
-    }
-
-    input[type="submit"] {
-        width: 70px;
-        height: 30px;
-    }
-
-    .container {
-        height: 50px;
-        width: 100px;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .available {
-        background-color: green;
-    }
-
-    .unavailable {
-        background-color: red;
-    }
-</style>
-
 <head>
     <title>Tools</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/styles.css"/>
 </head>
 <body>
+
+<c:if test="${sessionScope.username != null}">
+    <h2>Witaj ${sessionScope.username}</h2>
+
+    <form action="${pageContext.request.contextPath}/login" method="post">
+        <input type="hidden" name="action" value="logout">
+        <input type="submit" value="Log out">
+    </form>
+</c:if>
 
 <table>
     <tr>

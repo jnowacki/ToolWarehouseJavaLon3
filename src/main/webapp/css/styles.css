@@ -1,0 +1,41 @@
+table {
+    margin-top: 50px;
+    border-collapse: collapse;
+}
+
+table, td, th{
+    border: solid 1px black;
+}
+
+form {
+    margin: 0;
+
+}
+
+input[type="submit"] {
+    width: 70px;
+    height: 30px;
+}
+
+.label {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 10px;
+}
+
+.container {
+    height: 50px;
+    width: 100px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.available {
+    background-color: green;
+}
+
+.unavailable {
+    background-color: red;
+}

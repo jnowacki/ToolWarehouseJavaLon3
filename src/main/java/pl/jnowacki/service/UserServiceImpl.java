@@ -3,6 +3,7 @@ package pl.jnowacki.service;
 import pl.jnowacki.dao.UserDao;
 import pl.jnowacki.dao.UserDaoDBImpl;
 import pl.jnowacki.model.User;
+import pl.jnowacki.util.PasswordUtil;
 
 public class UserServiceImpl implements UserService {
 
@@ -26,6 +27,6 @@ public class UserServiceImpl implements UserService {
 
         User user = userDao.getUser(login);
 
-        return user != null && user.getPassword().equals(password) && user.getLogin().equals(login);
+        return user != null && user.getLogin().equals(login) && PasswordUtil.checkPassword(password, user.getPassword());
     }
 }
